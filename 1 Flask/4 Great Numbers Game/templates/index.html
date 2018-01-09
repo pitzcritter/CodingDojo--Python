@@ -1,0 +1,19 @@
+<html>
+    <head>
+       <title>Guess</title>
+    </head>
+    <body>
+        <h1>Great Numbers Game</h1>
+        <h2>Guess between 1 and 100</h2>
+        
+        <!-- read on to learn about form actions, we'll talk about the method in a later section -->        
+        <form action='/guess' method='post'>
+            <input type="text" name='guess'>
+            <input type="submit" value="Go!">            
+        </form>
+        <form action="/reset">
+            <input type="submit" value="reset" name="reset">
+        </form>
+        <h3>{{result}}</h3>
+    </body> 
+</html>

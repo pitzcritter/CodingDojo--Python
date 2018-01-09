@@ -1,0 +1,17 @@
+<html>
+    <head>
+       <title>Counter</title>
+    </head>
+    <body>
+        <h1>Assignment</h1>
+        <h3>Counter</h3>
+        <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+        <p>{{session['counter']}} times</p>
+        <form action='/addtwo' method='post'>
+            <input type="submit" value="Ninja" name="plustwo">
+        </form>
+        <form action='/resetcount' method='post'>
+            <input type="submit" value="Hacker" name="reset">
+        </form>
+    </body>
+</html>

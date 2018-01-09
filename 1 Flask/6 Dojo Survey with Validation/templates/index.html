@@ -1,0 +1,35 @@
+<html>
+    <head>
+       <title>Dojo Survey</title>
+    </head>
+    <body>
+      <h1>Index Page</h1>
+      <h3>Survey!</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/result' method='post'>
+          Name: <input type='text' name='name' style="display:block" value="{{session['data']['name']}}">
+          Dojo Location: <select name="location" style="display:block" value="{{session['data']['location']}}">
+              <option value="Seattle">Seattle</option>
+              <option value="By River">By River</option>
+              <option value="Over There">Over There</option>              
+          </select>
+          Favorite Language: <select name="language" style="display:block" value="{{session['data']['language']}}">
+            <option value="C#">C#</option>
+            <option value="Fortran">Fortran</option>
+            <option value="Basic">Basic</option>              
+        </select><br>        
+        Comment:
+         <textarea rows=5 cols=40 name='comment' style="display:block">{{session['data']['comment']}}</textarea>
+        <br>
+        <input type='submit' value='create user'>
+      </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>

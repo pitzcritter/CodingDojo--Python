@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Survey Results</title>
+    </head>
+    <body>
+        <h1>Results Page</h1>
+        <h3>Registration Results</h3>
+        <br>  
+        <p name='email'> Email: {{session['data']['email']}}</p>
+        <p name='password'> Password: {{session['data']['password']}}</p>
+        <p name='confirmpassword'> Confirm Password: {{session['data']['confirmpassword']}}</p>
+        <p name='firstname'> First Name: {{session['data']['firstname']}}</p>
+        <p name='lastname'> Last Name: {{session['data']['lastname']}}</p>
+        <form action='/returnindex' method='post'>
+            <input type='submit' value='return'>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>

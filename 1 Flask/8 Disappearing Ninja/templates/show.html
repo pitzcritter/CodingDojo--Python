@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Turltes!</title>
+
+    <!-- linking a css style sheet -->
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">-->
+
+    <!-- linking a javascript file -->
+    <!--<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>-->
+</head>
+<body>
+    {% for  color, thisfile in files.iteritems()  %}    
+        <div class="character1" style='background-color:{{color}}; padding:10px;'>
+            <tr>
+                <tbody>                     
+                    <img src="{{ url_for('static', filename=thisfile) }}" style='width: 45px'>                    
+                </tbody>
+            </tr>
+        </div>
+    {% endfor %}
+</body>
+</html>

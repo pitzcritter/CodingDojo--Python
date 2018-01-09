@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Success!</h1>        
+    <h2>The email address you entered ({{validemail}}) is a VALID email address! Thank You!</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Creatd_at</th>                
+            </tr>
+        </thead>
+        <tbody>
+            {% for email in all_emails %}
+            <tr>
+                <td>{{ email['Id'] }}</td>
+                <td>{{ email['address'] }}</td>
+                <td>{{ email['created_at'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+</html>

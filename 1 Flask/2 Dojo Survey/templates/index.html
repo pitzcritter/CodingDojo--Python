@@ -1,0 +1,29 @@
+<html>
+    <head>
+       <title>Dojo Survey</title>
+    </head>
+    <body>
+      <h1>Index Page</h1>
+      <h3>Survey!</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/result' method='post'>
+          Name: <input type='text' name='name' style="display:block" value="{{name}}">
+          Dojo Location: <select name="location" style="display:block" value="{{location}}">
+              <option value="Seattle">Seattle</option>
+              <option value="By River">By River</option>
+              <option value="Over There">Over There</option>              
+          </select>
+          <!--#Dojo Location: <input type='text' name='location'>-->
+          Favorite Language: <select name="language" style="display:block" value="{{language}}">
+            <option value="C#">C#</option>
+            <option value="Fortran">Fortran</option>
+            <option value="Basic">Basic</option>              
+        </select><br>
+        <!--Favorite Language: <input type='text' name='language'>-->
+        Comment:
+         <textarea rows=5 cols=40 name='comment' style="display:block">{{comment}}</textarea>
+        <br>
+        <input type='submit' value='create user'>
+      </form>
+    </body>
+</html>

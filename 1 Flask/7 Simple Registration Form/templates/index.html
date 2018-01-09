@@ -1,0 +1,26 @@
+<html>
+    <head>
+       <title>Registration</title>
+    </head>
+    <body>
+      <h3>Please Register</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/result' method='post'>
+            Email: <input id="emailAddress" type="email" name='email' value="{{session['data']['email']}}"><br>
+            Password:<input id="userPassword" type="password" name='password'  value="{{session['data']['password']}}"><br>
+            Confirm Password:<input id="confirmPassword" type="password" name='confirmpassword'  value="{{session['data']['confirmpassword']}}"><br>
+            First Name:<input type='text' name='firstname'  value="{{session['data']['firstname']}}"><br>
+            Last Name:<input type='text' name='lastname'  value="{{session['data']['lastname']}}">
+        <br>
+        <input type='submit' value='create user'>
+      </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </body>
+</html>
