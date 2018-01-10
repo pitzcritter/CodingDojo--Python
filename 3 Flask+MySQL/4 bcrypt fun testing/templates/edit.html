@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User Page</title>
+</head>
+<body>
+  <h2>Update User Feature</h2>
+  <form action="/users/{{id}}" method="POST">
+    <label for="first_name">First Name:<input type="text" name="first_name"  value="{{first_name}}"></label>
+    <label for="last_name">Last Name:<input type="text" name="last_name"  value="{{last_name}}"></label>
+    <label for="email">Email:<input type="text" name="email"  value="{{email}}"></label>
+    <label for="password">Password:<input type="text" name="password"  value="{{password}}"></label>
+    <button type="submit" name="button">Update</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+*{
+    background-color: lightblue;
+}
+
+table  {
+  width: 80%;
+}
+
+body > table > tr > td > div > form {
+  display: inline-block;
+  width: 30%;
+}
+
+body > table > tr > td > div{
+ display: inline-block;
+}
