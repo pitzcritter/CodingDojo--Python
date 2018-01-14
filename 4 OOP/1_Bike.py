@@ -4,7 +4,7 @@ class bike(object):
         self.Max_Speed =  max_speed
         self.miles = 0    
     def displayInfo(self):
-        print "Price: ", '${:,.2f}'.format(self.Price.strftime)
+        print "Price: ", '${:,.2f}'.format(self.Price)
         print "Max Speed(mph): ", self.Max_Speed
         print "Miles: ", self.miles
         return self
@@ -25,3 +25,5 @@ print "   price: ", Stingray.Price
 print " "
 print "Racer"
 print Racer.ride().ride().reverse()
+print " "
+print Recumbent.displayInfo()
