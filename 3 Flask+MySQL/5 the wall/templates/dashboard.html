@@ -33,7 +33,7 @@
                     <!--<div id=collapse-{{message['new_id']}} class="panel-collapse collapse" role="tabpanel" aria-labelledby=heading-{{message['new_id']}}>-->
                         <div class="panel-body">                                                                                        
                             {% for comment in commentsDb %}                                                            
-                                {% if message['message_key'] == comment['message_key'] %}
+                                {% if message['message_id'] == comment['message_id'] %}
                                     <div class='row'>
                                         <div class='col-md-12'>
                                             <p>    {{comment['comments']}}</p>

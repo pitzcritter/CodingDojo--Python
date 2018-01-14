@@ -18,9 +18,10 @@ Group By users.id, concat(day(messages.created_at), month(messages.created_at), 
 Order By users.id Desc, messages.id, messages.created_at;
 
 # comments w/o date_functions in methond returnDashboard()
-Select concat(users.id,'-', messages.id) As message_key, group_concat(' ' ,comment,' - ') As comments, concat(first_name, ' ', last_name, ' - ',  date_format(comments.created_at,'%M %e, %Y')) As label 
+Select comments.message_id As message_id, group_concat(' ' ,comment,' - ') As comments, concat(first_name, ' ', last_name, ' - ',  date_format(comments.created_at,'%M %e, %Y')) As label 
 From messages 
 Join comments On message_id = comments.message_id 
 Join users on comments.user_id = users.id 
+where comments.message_id=messages.id
 Group By comments.user_id, comments.user_id, concat(day(messages.created_at), month(messages.created_at), year(messages.created_at)) 
 Order By comments.user_id Desc, messages.id, comments.id;
