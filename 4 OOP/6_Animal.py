@@ -1,55 +1,50 @@
-class animal(object):
-    def __init__(self, name, health=100): 
-        self.Name = name
-        self.Health = health
-    def Walk(self): 
-        self.Health -= 1
-        return self
-    def Run(self): 
-        self.Health -= 5
-        return self
-    def DisplayHealth(self): 
-        print (self.Name+ ": "+ str(self.Health))
+# Create a class Animal
 
-Animal1 = animal("Lemming")
-Animal1.Walk().Walk().Walk().Run().Run().DisplayHealth()
-Animal = animal("Vole",1000).DisplayHealth()
+class Animal(object):
+    def __init__(self, name):
+        self.health = 100
+        self.name = name
 
-class dog(animal):	
-    def __init__(self, name, health=150):
-        super(dog, self).__init__(name, health)        
-        #self.Name = name
-        #self.Health = health
-        #return self
-    def Pet(self): 
-        self.Health += 5
+    def walk(self):
+        self.health -= 1
         return self
 
-Dog = dog('Fido')
-Dog.Walk().Walk().Walk().Run().Run().Pet().DisplayHealth()
-
-class dragon(animal):
-    def __init__(self, name, health=170):
-        super(dragon, self).__init__(name, health)        
-
-    def Fly(self):
-        self.Health -=10
+    def run(self):
+        self.health -= 5
         return self
+
+    def displayHealth(self):
+        print 'My name is: ' + self.name
+        print 'I have: ' + str(self.health) + ' health'
+        return self
+
+animal = Animal('Garfield')
+animal.walk().walk().walk().run().run().displayHealth()
+
+class Dog(Animal):
+    def __init__(self,name):
+        super(Dog, self).__init__(name)
+        self.health = 150
         
-    def DisplayHealth(self):
-        super(dragon, self).DisplayHealth()
-        print "I am a dragon"
+    def pet(self):
+        self.health += 5
         return self
 
-Dragon = dragon('Burpless')
-Dragon.Walk().Walk().Walk().Run().Run().Fly().Fly().DisplayHealth()
+dog = Dog('Odie')
+dog.walk().walk().walk().run().run().pet().displayHealth()
 
-class ardvark(animal):
-    def __init__(self, name, health=110):
-        super(ardvark, self).__init__(name, health)        
+class Dragon(Animal):
+    def __init__(self, name):
+        super(Dragon, self).__init__(name)
+        self.health = 170
 
-Ardvark = ardvark('Nosy')
-#Ardvark.Fly()
-#Ardvark.Pet()
-Ardvark.DisplayHealth()
-#Dog.Fly()
+    def fly(self):
+        self.health -= 10
+        return self
+
+    def displayHealth(self):
+        print "This is a dragon"
+        super(Dragon, self).displayHealth()
+
+dragon = Dragon('Nightwing')
+dragon.fly().displayHealth()
