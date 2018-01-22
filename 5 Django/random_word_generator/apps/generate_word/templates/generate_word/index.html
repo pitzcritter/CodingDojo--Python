@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Randome Word</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Random Word</h1>
+        <h3>(attempt # {{ request.session.counter }})</h3>
+        <!--div id="randomwordholder">
+        </div>-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            {{ random_word }}
+          </div>
+        </div>
+        <form action='/random_word' method="POST">
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Generate" class="btn btn-default navbar-btn">
+        </form>
+        <form action='/reset' method='POST'>
+            {% csrf_token %}
+            <input type='submit' name='submit' value='Reset' class='btn btn-default navbar-btn'>
+        </form>
+    </div>    
+</body>
+</html>
