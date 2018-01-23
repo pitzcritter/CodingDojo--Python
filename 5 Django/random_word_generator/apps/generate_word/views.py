@@ -40,3 +40,5 @@ def random_word(request):
 def reset(request):
     request.session.clear()
     return redirect('/')    
+
+

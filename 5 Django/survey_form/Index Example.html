@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+</head>
+<body>
+    <form action="/process_input" method='POST'>
+        <input type='hidden' name='csrfmiddlewaretoken' value='Nr2BUV1TNJElTqTYjo8CE62ymJKPUtZfWJQJFlZOMWKCduoM0jbgf2RsMFDiO03h' />
+        <fieldset style='width:220px'>
+            <legend>Survey:</legend>
+            Name:<br>
+            <input type="text" name="name">
+            <br>
+            Dojo Location:<br>
+            <select name="location">
+                <option value="cambridge" selected>Cambridge</option>
+                <option value="new_york">New York</option>
+                <option value="toadsuck,_arkansas">Toadsuck, Arkansas</option>
+                <option value="nowhere">Nowhere</option>
+            </select><br><br>
+            Favorite Language:<br>
+            <select name="language">
+                <option value="fortran" selected>Fortran</option>
+                <option value="basic">Basic</option>
+                <option value="pascal">Pascal</option>
+                <option value="none">None</option>
+            </select><br><br>
+            Comment(optional)<br>
+            <textarea name="comment" row='7' style="width:200px;"> 
+            </textarea><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+      </form> 
+</body>
+</html>
