@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Session Words</title>
+    
+    <link rel="stylesheet" href="/static/words/style.css" type="text/css" media="all" />
+</head>
+<body class='body'>
+    <div class='wrapper'>
+        <div class='left_side'>
+    <!--<form action="/session_words/add_word" method="post" accept-charset="utf-8">-->
+            <form action="/words/add" method='POST'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='lveBaZn34LxPXbaKbyFkrbnBFS25bYF5uN2JVplY3YD6hfFyStIY27cv5OVy5vJ7' />
+                <fieldset style='width:220px'>
+                    <legend>Survey:</legend>
+                    Add a new word:<br>
+                    <input type="text" name="new_word">
+                    <br>
+                    <p>Choose color:</p>
+                    <input type="radio" class = 'select_color'  id='red' name="color" value="red"> Red<br>
+                    <input type="radio" class = 'select_color' id='green' name="color" value="green"> Green<br>
+                    <input type="radio" class = 'select_color' id='blue' name="color" value="blue"> Blue<br><br>
+                    <input type="checkbox" class = 'big' name="big" value="big"> show in BIG fonts!<br>
+                    <input type="submit" value="Add to Session" class='add_button'>
+                </fieldset>
+            </form> 
+        </div>
+        <div class='right_side'>
+    <!--<a href="/session_words/clear" >Clear</a>-->
+            <form action="/words/clear" method='POST'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='lveBaZn34LxPXbaKbyFkrbnBFS25bYF5uN2JVplY3YD6hfFyStIY27cv5OVy5vJ7' />
+                <input type="submit" value="Clear Session", class='clear_button'>
+            </form>
+            
+                
+                    <p class="red normal">first - 2018-01-24 04:15 AM</p>
+                
+                    <p class="green normal">second - 2018-01-24 04:15 AM</p>
+                
+                    <p class="blue normal">third - 2018-01-24 04:15 AM</p>
+                
+                    <p class="red normal">fifth - 2018-01-24 04:16 AM</p>
+                
+                    <p class="green normal">sixth - 2018-01-24 04:22 AM</p>
+                
+                    <p class="red normal">seventh - 2018-01-24 04:24 AM</p>
+                
+                    <p class="green big">8 - 2018-01-24 04:25 AM</p>
+                
+                    
+        </div>
+    </div>
+</body>
+</html>

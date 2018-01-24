@@ -1,0 +1,69 @@
+
+.clear_button{
+    background-color:salmon;
+    color: green;
+}
+
+.add_button{
+    background-color:lightskyblue;
+}
+
+.body{
+    width:800px;    
+    border: 1px solid black;
+}
+
+.left_side, .right_side{
+    width:250px;
+    height: 280px;
+    background-color: whitesmoke;
+}
+
+.left_side{
+    display:inline-block;
+}
+.right_side{    
+    vertical-align: top;    
+    display:inline-block;
+}
+
+.wrapper{
+    width:700px;
+    background-color: lightseagreen;
+}
+div {
+    padding: 20px;
+    margin: 20px;
+    width: 49%;
+    border: 1px solid black;
+}
+
+
+.show_big_fonts {
+    margin-top: 16px;
+}
+
+.add_button {
+    margin-top: 25px;
+}
+
+.green {
+    color: green;    
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+.big {
+    font-size: 2em;
+}
+
+#right_side p {
+    margin: 3px 0;
+    padding: 0;
+}

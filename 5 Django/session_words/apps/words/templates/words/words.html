@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Session Words</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'words/style.css' %}" type="text/css" media="all" />
+</head>
+<body class='body'>
+    <div class='wrapper'>
+        <div class='left_side'>
+    <!--<form action="/session_words/add_word" method="post" accept-charset="utf-8">-->
+            <form action="/words/add" method='POST'>
+                {% csrf_token %}
+                <fieldset style='width:220px'>
+                    <legend>Survey:</legend>
+                    Add a new word:<br>
+                    <input type="text" name="new_word">
+                    <br>
+                    <p>Choose color:</p>
+                    <input type="radio" class = 'select_color'  id='red' name="color" value="red"> Red<br>
+                    <input type="radio" class = 'select_color' id='green' name="color" value="green"> Green<br>
+                    <input type="radio" class = 'select_color' id='blue' name="color" value="blue"> Blue<br><br>
+                    <input type="checkbox" class = 'big' name="big" value="big"> show in BIG fonts!<br>
+                    <input type="submit" value="Add to Session" class='add_button'>
+                </fieldset>
+            </form> 
+        </div>
+        <div class='right_side'>
+    <!--<a href="/session_words/clear" >Clear</a>-->
+            <form action="/words/clear" method='POST'>
+                {% csrf_token %}
+                <input type="submit" value="Clear Session", class='clear_button'>
+            </form>
+            {% if words %}
+                {% for word in words %}
+                    <p class="{{ word.color }} {{ word.size }}">{{ word.word }} - {{word.when}}</p>
+                {% endfor %}
+            {% endif %}        
+        </div>
+    </div>
+</body>
+</html>

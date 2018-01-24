@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from time import gmtime, strftime
 # the index function is called when root is visited
 def index(request):
     #response = "Hello, I am your first request!"
@@ -18,8 +19,10 @@ def process_input(request):
         request.session['location'] = request.POST['location']
         request.session['language'] = request.POST['language']
         request.session['comment'] = request.POST['comment']   
+        request.session['when'] = strftime("%Y-%m-%d %H:%M %p", gmtime()) 
+
     #return render(request, 'survey\results.html')
-        #return redirect('/result')
+        #return redirect('f/result')
         return redirect('/results')
     else:
         print "Not Post"
