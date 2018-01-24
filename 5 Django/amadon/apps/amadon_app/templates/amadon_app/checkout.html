@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Thank you for shopping at Amadon</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1>Thank you for your business!</h1>
+
+            <p>We charged your credit card ${{ subtotal }}.</p>
+
+            <p>You have ordered {{ item_count }} items so far and spent ${{ grand_total }}.</p>
+
+            <a class= "badge badge-success" href="{% url 'index' %}">Go Back</a>
+            <a class="badge badge-warning" href="{% url 'clear' %}">Empty Shopping Cart</a>
+        </div>
+    </body>
+</html>

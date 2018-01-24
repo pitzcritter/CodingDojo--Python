@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {%load static%}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'amadon_app/style.css' %}" type="text/css" media="all" />
+        <title>Amadon</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1>Amadon Store!</h1>
+            <div id="items">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>    
+                        {% for item in items %}
+                        <tr>
+                            <td>{{ item.item_name }}</td> 
+                            <td>{{ item.price }}</td> 
+                            <td>
+                                <form action="{% url 'process' %}" method="POST">
+                                    {% csrf_token %}
+                                    <select name='quantity'>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                    </select>
+                                    <input type="hidden" name="prod_id" value="{{ item.prod_id }}">
+                                    <input type="submit" value="Buy!" name="buy">
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+body {
+    display: flex;
+}
+
+div {
+    padding: 20px;
+    margin: 20px;
+    width: 49%;
+    border: 1px solid black;
+}
+
+label {
+    display: block;
+}
+
+#submit {
+    margin-top: 25px;
+}
+
+
+.container-fluid{
+    background-color: lightseagreen;
+}
+
+#items{
+    background-color: whitesmoke;
+}
+.table{
+    background-color: lightsteelblue;
+}

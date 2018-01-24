@@ -14,7 +14,6 @@ def words(request):
     return render(request, 'words/words.html')
 
 
-
 def add_word(request):
     if request.method == "POST":
         print "Post"
@@ -45,9 +44,8 @@ def add_word(request):
 def return_words(request):
     return render(request, 'words/words.html')
 
-
-
 def clear(request):
-    request.session['words'] = []
+    for key in request.session.keys():
+        del request.session[key]    
+    #request.session['words'] = []
     return redirect('/words')
-
