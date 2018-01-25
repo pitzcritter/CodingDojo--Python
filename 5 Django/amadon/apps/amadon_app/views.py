@@ -2,7 +2,6 @@ from __future__ import unicode_literals
 from django.urls import reverse
 from django.shortcuts import render, redirect
 
-
 def index(request):     
     request.session['items'] = [
         {'prod_id':1,'item_name':'Dojo Tshirt', 'price': 19.99},

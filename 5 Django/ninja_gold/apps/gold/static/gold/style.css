@@ -1,0 +1,65 @@
+*{
+    background-color: gold;
+    color: black;
+}
+label{
+    display: inline-block;
+    width:450px;
+    background-color:black;
+    color:white;
+}
+.grand_total{
+    display: inline-block;  
+    text-align: center;
+    padding:0px;
+    height: 30px; 
+    font-family:sans-serif;
+    width:180px;
+    vertical-align: top;
+    background-color: lightgray;
+    border-style: inset;
+    border-width: 2px;
+    margin: 3px;
+}
+.body {
+    display: flex;
+    display: inline-block;
+    background-color: black;
+    color: white;
+}
+
+div {
+    padding: 20px;
+    margin: 20px;
+    width: 49%;
+    border: 1px solid black;
+}
+
+.location, h2, p, .your_gold, form, #comment {
+    background-color: lightgray;
+}
+
+.button{
+    background-color: gold;
+}
+
+h1{
+    color: black
+}
+h3{
+    background-color: black;
+    color: white;
+}
+#comment{
+    font-size: 12px;
+}
+.subtext{
+    font-size: 11px;
+}
+
+.red{
+    color:red;
+}
+.green{
+    color:green;
+}

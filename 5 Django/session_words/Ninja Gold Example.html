@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/gold/style.css" type="text/css" media="all" />
+       <title>Ninja Gold</title>
+    </head>
+    <body class='body'>
+        <h1>Ninja Money</h1><br>
+        <label>Your Gold:<div class='grand_total'>-11</div><a href="/clear">New Game</a></label>
+        <!--<input type="text" name='gold' value='' class=your_gold>-->
+        <br>
+        <!-- read on to learn about form actions, we'll talk about the method in a later section -->        
+        <div class="location" id="farm" style="display:inline-block; width:150px; text-align:center; border: solid black; border-width: 1px; margin: 3px;">            
+            <h2>Farm</h2>
+            <p class='subtext'>(earn 10-20 golds)</p>
+            <form action="/farm" method="post" class='form' method='POST'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='O0DlXK8V5ETyUzSAW4Ew4eZGjshsCEbZXirtIa6Q4RZPeDnoDZHaFaOAJoaVwbf1' />
+                <!--<input type="hidden" name="building" value="farm" />-->
+                <input type="submit" value="Find Gold!" class='button'/>
+            </form>       
+        </div>
+        <div class="location" id="Cave" style="display:inline-block; width:150px; text-align:center; border: solid black; border-width: 1px;">        
+            <h2>Cave</h2>
+            <p class='subtext'>(earn 5-10 golds)</p>                
+            <form action="/cave" method="post" class='form'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='O0DlXK8V5ETyUzSAW4Ew4eZGjshsCEbZXirtIa6Q4RZPeDnoDZHaFaOAJoaVwbf1' />
+                <!--<input type="hidden" name="building" value="cave" />-->
+                <input type="submit" value="Find Gold!" class='button'/>
+            </form>               
+        </div>
+        <div class="location" id="house" style="display:inline-block; width:150px; text-align:center; border: solid black; border-width: 1px;">
+            <h2>House</h2>
+            <p class='subtext'>(earn 2-5 golds)</p>
+            <form action="/house" method="post" class='form'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='O0DlXK8V5ETyUzSAW4Ew4eZGjshsCEbZXirtIa6Q4RZPeDnoDZHaFaOAJoaVwbf1' />
+                <!--<input type="hidden" name="building" value="house" />-->
+                <input type="submit" value="Find Gold!" class='button'/>
+            </form>    
+        </div>
+        <div class="location" id="casino" style="display:inline-block; width:150px; text-align:center; border: solid black; border-width: 1px;">
+            <h2>Casino</h2>
+            <p class='subtext'>(earn/lose 0-50 golds)</p>
+            <form action="/casino" method="post" class='form'>
+                <input type='hidden' name='csrfmiddlewaretoken' value='O0DlXK8V5ETyUzSAW4Ew4eZGjshsCEbZXirtIa6Q4RZPeDnoDZHaFaOAJoaVwbf1' />
+                <!--<input type="hidden" name="building" value="casino" />-->
+                <input type="submit" value="Find Gold!" class='button'/>
+            </form>
+        </div>
+        <br>
+        <h3>Activities: </h3>
+        <div class='your_gold'>
+        
+            <h6 id='comment' class=red>Entered a casino and lost -13 golds! 2018-01-25 05:03 AM</h6><br>
+        
+            <h6 id='comment' class=green>Entered a house and earned 2 golds! 2018-01-25 05:03 AM</h6><br>
+        
+            <h6 id='comment' class=red>Entered a casino and lost -26 golds! 2018-01-25 05:03 AM</h6><br>
+        
+            <h6 id='comment' class=green>Entered a cave and earned 7 golds! 2018-01-25 05:03 AM</h6><br>
+        
+            <h6 id='comment' class=green>Entered a farm and earned 14 golds! 2018-01-25 05:03 AM</h6><br>
+        
+            <h6 id='comment' class=green>Entered a house and earned 3 golds! 2018-01-25 05:03 AM</h6><br>
+        
+            <h6 id='comment' class=green>Entered a house and earned 2 golds! 2018-01-25 05:03 AM</h6><br>
+        
+        </div>
+        <!--<textarea rows="7" cols="87" name='comment' class='your_gold'></textarea>-->
+    </body> 
+</html>
