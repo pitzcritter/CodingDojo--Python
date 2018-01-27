@@ -1,0 +1,16 @@
+body{
+    background-color: lightseagreen;
+}
+.register, .login{
+    background-color: whitesmoke;
+    border: 1px solid black;
+    width: 300px;
+    margin:20px;
+    padding:10px;
+}
+.messages{
+    color:red;
+}
+.reference{
+    background-color: whitesmoke;
+}
