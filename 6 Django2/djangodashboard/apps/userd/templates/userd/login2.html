@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% include 'userd/header.html'%}
+        <title>Register</title>
+    </head>
+    <body>
+        {% include 'userd/navunsigned.html'%}        
+        <div class= 'wrapper container-fluid'>            
+            {% include 'userd/displaymessages.html'%}
+            <h1>Register</h1>
+            <div class= 'logborder container-fluid'>
+                <form action="/register/create" method='POST' class='register'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="first_name" id='reglabel'>First Name</label>
+                        <input type="text" name='first_name'>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name" id='reglabel'>Last Name</label>
+                        <input type="text" name='last_name'>
+                    </div>
+                    <div class="form-group">
+                        <label for="birth_date" id='reglabel'>Birth Data</label>
+                        <input type="date" name='birth_date'>
+                        <!--<input type="date" name="birth_date" max="1979-12-31">-->
+                    </div>
+                    <div class="form-group">
+                        <label for="email" id='reglabel'>Email</label>
+                        <input type="email" name='email'>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" id='reglabel'>Password</label>
+                        <input type="password" name='password'>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password" id='reglabel'>Confirm Password</label>
+                        <input type="password" name='confirm_password'>
+                    </div>
+                    <input type="submit" value="Register" class="btn btn-success btn-lg">
+                    <a href="/signin">Already have and account? Login</a>
+                </form>
+            </div><!--login border-->
+        </div><!--wrapper-->
+    </body>
+</html>

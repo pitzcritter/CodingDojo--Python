@@ -1,0 +1,142 @@
+body{
+    background-color: lightseagreen;
+}
+
+.messages{
+    background-color: lightsalmon;
+    border:0px;
+}
+#amessage{
+    margin-left:40px;
+}
+h5{
+    margin-left: 80%;
+    margin-left: 80px;
+    margin-right: auto;    
+    text-align: center;
+    
+    font-style: italic;
+}
+#who{
+    display:inline-block;    
+}
+.wrapper{   
+    width:80%;
+}
+.welcomeborder, .login, .logborder{
+    background-color: lightgray;
+}
+.jumbotron{
+    
+}
+.lowersection, .logborder{
+    display: inline-block;
+}
+.comments{    
+    display: inline-block;
+    width: 30%;
+}
+
+.login{
+
+}
+
+.logborder{
+    width:90%;
+    padding: 10px;
+    text-align: left;    
+}
+#label{
+    width:70px;
+    color:black;
+}
+
+#reglabel{
+    color: black;
+    width: 100px;
+}
+#user_header.this_fieldset{
+    width:300px;
+}
+.these_labels{
+    width:100px;   
+    
+}
+
+#adminheader{
+    display: inline-block;    
+    width: 100%;
+    
+    
+}
+#adminheader.h1{
+    display: inline-block;            
+    
+}
+#adminheader.div{
+    display: inline-block;        
+    vertical-align: top;  
+    border: 1px solid black;  
+}
+
+.form1{
+    display: inline-block;
+    width: 30%;
+    border: 1px solid black;
+}
+.form2{
+    display: inline-block;
+    vertical-align: top;  
+    width: 30%;
+    
+}
+
+.edit_border{
+    display: inline-block;
+    width: 40%;
+    border: 1px solid black;    
+    padding: 5px;    
+}
+.passwordfieldset{
+    display: inline-block;
+    vertical-align: top;  
+    width: 40%;
+    border: 1px solid black;
+    margin-left:30px;
+    padding: 5px;
+}
+
+.navbar-right{
+    display: inline-block;
+    border: 1px solid black;
+}
+table{
+    text-align: right;
+ 
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+ }
+tbody{
+    border:1px;
+    background-color: whitesmoke;    
+}
+thead{
+    border:1px;
+    background-color: lightgrey;
+}
+
+#message_button{
+    margin-left:90%;    
+    text-align: right;
+       
+}
+
+#new_button{
+    margin: 5px;
+    margin-left: 30%;
+    
+}

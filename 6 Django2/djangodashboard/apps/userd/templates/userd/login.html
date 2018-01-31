@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% include 'userd/header.html'%}
+        <title>Login</title>
+    </head>
+    <body>
+        {% include 'userd/navunsigned.html'%}
+        <div class= 'wrapper container-fluid'>            
+            {% include 'userd/displaymessages.html'%}              
+            <h1>Login</h1>
+            <div class= 'logborder container-fluid'>
+                <form action="/signin/login" method='POST' class='login'>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="email" id='label'>Email   </label>
+                        <input type="email" name='email'>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" id='label'>Password</label>
+                        <input type="password" name='password'>
+                    </div>
+                    <input type="submit" value="Login" class="btn btn-success btn-lg">
+                    <a href="/register">No account? Register</a>
+                </form>
+            </div><!--logborder-->
+        </div><!--wrapper-->
+    </body>
+</html>

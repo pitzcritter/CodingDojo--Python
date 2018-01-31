@@ -1,0 +1,24 @@
+<!--
+    https://v4-alpha.getbootstrap.com/components/modal/
+    https://getbootstrap.com/docs/3.3/components/#navbar    
+-->
+<nav class="navbar navbar-default navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->    
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></button>
+            <a class="navbar-brand" href="\">Test App</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/success/{{request.session.user_id}}">Dashboard <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/users/{{request.session.user_id}}/show">Profile <span class="sr-only">(current)</span></a></li>                
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">                
+                <li><a href="\logoff" class='signin'>{{request.session.first_name}} - Logoff</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% include 'userd/header.html'%}
+        <title>User Info</title>
+    </head>
+
+    <body>
+        {% include 'userd/navsigned.html'%}
+        <div class="container-fluid">
+            <div class='row post-form'>
+                <div class='col-md-8 col-md-offset-2' id="user_header">
+                    <div class="this_fieldset">
+                    <fieldset class='fieldset'>
+                        <legend>{{user.name}}</legend>
+                        <label class="these_labels" for="heading">Registered at</label></h2>{{user.create_at}} </h2><br>
+                        <label class="these_labels" for="heading">User Id</label></h2>{{user.user_id}} </h2><br>
+                        <label class="these_labels" for="heading">E-Mail</label></h2>{{user.email}} </h2><br>
+                        <label class="these_labels" for="heading">Birthday</label></h2>{{user.birth_date}} </h2><br>
+                        <label class="these_labels" for="heading">Description</label></h2>{{user.description}} </h2><br>
+                    </fieldset>
+                    </div>
+                    <div>
+                        <form action='/users/{{user.user_id}}/show/post_message' method='post'>
+                            {% csrf_token %}
+                            <div class='form-group'>
+                                <h3 class='form-signin-heading'>Leave a message for {{user.first_name}}</h3>
+                                <textarea class="form-control" rows="3" name='message'></textarea>
+                            </div>
+                            <button id="message_button" type="submit" class="btn btn-success">Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {% if user_messages %}
+            <div class="panel-group col-md-8 col-md-offset-2" id="accordion" role="tablist" aria-multiselectable="true">
+                {% for this_message in user_messages %}            
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading-{{this_message.user_id}}">
+                            <div class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{this_message.user_id}}" aria-expanded="false" aria-controls="collapse-{{this_message.user_id}}">
+                                <h3 id="who" ><a href="/users/{{this_message.muser_id}}/show">{{ this_message.name }}</a> wrote:</h3><h5 id="who" >{{this_message.when}}</h5>
+                                <p id="amessage">{{ this_message.message}}</p>
+                                </a>
+                            </div>
+                        </div>                    
+                        
+                        <!--<div id=collapse-{{this_message.user_id}} class="panel-collapse collapse" role="tabpanel" aria-labelledby=heading-{{this_message.user_id}}>-->
+                            <div class="panel-body">                                                                                        
+                                {% for this_comment in user_comments %}                                                            
+                                    {% if this_message.message_id == this_comment.message_id %}
+                                        <div class='row'>
+                                            <div class='col-md-12'>
+                                                <h3><a href="/users/{{this_comment.cuser_id}}/show">{{ this_comment.name }}</a> wrote:</h3>
+                                                <p>    {{this_comment.comment}}</p>
+                                                <strong><p id="who">--- Posted by: {{this_comment.name}}</p></strong><h5 id="who" >{{this_comment.when}}</h5>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}                            
+                                <div class="row">
+                                    <div class='col-md-12'>
+                                        <form action='/users/{{request.session.user_id}}/{{this_message.message_id}}/show/post_comment' method='post'>
+                                            {% csrf_token %}
+                                            <div class='form-group'>
+                                                <h3 class='form-signin-heading'>Post a comment</h3>
+                                                <textarea class="form-control" rows="3" name='comment'></textarea>
+                                            </div>                                            
+                                            <button id="message_button" type="submit" class="btn btn-success">Post</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        <!--</div>-->
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </body>
+</html>

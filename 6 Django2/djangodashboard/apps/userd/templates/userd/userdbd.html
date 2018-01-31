@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.22/jquery-ui.js"></script>
+        {% include 'userd/header.html'%}
+    </head>
+    <body>
+        {% include 'userd/navsigned.html'%}
+        <div class="container">
+            <div id='adminheader'>
+            <h1>All Users</h1>
+            <!--<form action="/users/admin/new" method='POST' onclick='ifAreSure' class='register'><input type="submit" value="Add new" class="btn btn-primary btn-lg"></form>-->
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>E-Mail</th>
+                        <th>Created</th>
+                        <th>User Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in Users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td><a href="/users/{{user.id}}/show">{{ user.first_name }} {{ user.last_name }}</a></td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.created_at }}</td>
+                        <td>{{ user.user_level }}</td>                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>            
+        </div>
+    </body>
+</html>

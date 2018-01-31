@@ -21,11 +21,13 @@ def login(request):
         if len(errors) > 0:
             for err in errors:
                 messages.error(request, err)
+            request.session['login'] = False
             return redirect('/') 
     print "email: ",request.POST['email']           
     request.session['user_id'] =errors.id
     #request.session['user_id'] = request.POST['email']
     messages.success(request, "Successfully logged in!")
+    request.session['login'] = True
     return redirect("/success",request)
 
 def register(request):
@@ -35,8 +37,10 @@ def register(request):
     if type(errors) == list:
         for err in errors:
             messages.error(request, err)
+        request.session['login'] = False
         return redirect('/')
     request.session['user_id'] = errors.id
+    request.session['login'] = True
     messages.success(request, "Successfully registered!")
     print "req1::::"
     return redirect("/success",request)
